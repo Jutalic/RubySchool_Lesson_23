@@ -15,10 +15,13 @@ get '/visit' do
 end
 
 post '/visit' do
+											
 	@username = params[:username]
 	@phone    = params[:phone]
 	@datetime = params[:datetime]
 	@master = params[:master]
+
+#	erb "Ok! user is #{@username}, #{@phone}, #{@datetime}, #{@master}"
 
 	@title = 'Thank you!'
 	if @username != nil
