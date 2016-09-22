@@ -20,15 +20,16 @@ post '/visit' do
 	@phone    = params[:phone]
 	@datetime = params[:datetime]
 	@master = params[:master]
+	@color = params[:color]
 
 #	erb "Ok! user is #{@username}, #{@phone}, #{@datetime}, #{@master}"
 
 	@title = 'Thank you!'
 	if @username != nil
-		@message = "Dear #{@username}, we'll be waiting for you at #{@datetime} to master #{@master}"	
+		@message = "Dear #{@username}, we'll be waiting for you at #{@datetime} to master #{@master}, color #{@color}"	
 
 		f = File.open './public/users.txt', 'a'
-		f.write("User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}, master #{@master}")
+		f.write("User: #{@username}, Phone: #{@phone}, Date and time: #{@datetime}, master #{@master}, color #{@color}")
 		f.write("\r\n")
 		f.close
 
